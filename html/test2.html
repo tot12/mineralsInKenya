@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* path{
+             transform: scale(5.0);
+             -ms-transform: scale(5.0);
+             -webkit-transform: scale(5.0);
+         }*/
+        #tooltip {
+            /* position: absolute;
+            /* top: 0;
+             left: 0;
+            /* border: solid 1px red;)/
+             /*padding: 5px;*/
+        }
+    </style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+<svg id="svg1" style="width: 100%;height: 90vh;background-color: beige;z-index: 1;position: fixed"></svg>
+
+<!--<i id="tooltip" style="color: red;width: 2px;height:2px;" class="bi bi-geo-alt-fill"></i>-->
+<script>
+    
+    //var width = 1000;
+    // var height = 800;
+
+
+    var svg = d3.select("#svg1")
+
+    //movable graph
+    // .call(d3.behavior.zoom().scaleExtent([1, 10]))
+
+    // .append("g")
+
+    var width = +svg.node().getBoundingClientRect().width
+    var  height = +svg.node().getBoundingClientRect().height;
+
+    //var datapoints;
+
+        d3.json("/file")
+            .then(function (data1) {
+                /*var filteredadd=[]
+                data1.addresses.forEach(function(m){
+                    filteredadd.push({features:m.features})
+                })*/
+                var rotate = [0,0,-45]
+                var projection = d3.geoIdentity().fitSize([width, height], data1)
+                //projection.rotate(rotate);
+                var path = d3.geoPath(projection);
+
+                svg.selectAll("path")
+                    .data(data1.features)
+                    .enter()
+                    .append("path")
+                    .style("border", "solid")
+                    .style("border-color", "purple")
+                    .style("border-width", "2px")
+                    .style("fill", "#F8FFF6")
+                    .style("stroke", "#008080")
+                    .style("padding", "10px")
+                    // .on("mousemove", mouseover)
+                    .call(d3.zoom().on("zoom", function () {
+                        svg.attr("transform", d3.event.transform)
+                    }))
+                    .attr("marker-end", "url(#triangle)")
+                    .attr("d", path);
+
+                var tooltip = d3.select("#tooltip")
+                    .style("opacity", 1)
+                    .attr("class", "tooltip")
+                    .style("font-size", "5px");
+
+                //or plot it separately
+                svg.append("svg:defs").append("svg:marker")
+                    .attr("id", "triangle")
+                    .attr("refX", 13)
+                    .attr("refY", 5)
+                    .attr("markerWidth", 70)
+                    .attr("markerHeight", 70)
+                    .attr("markerUnits","userSpaceOnUse")
+                    .attr("orient", "auto")
+                     .append("path")
+                    .attr("d","M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" )
+                    .style("fill", "#008080");
+
+                /*svg2.append("marker")
+                    .attr({
+                        "id": "arrow",
+                        "viewBox": "0 -5 10 10",
+                        "refX": 5,
+                        "refY": 0,
+                        "markerWidth": 4,
+                        "markerHeight": 4,
+                        "orient": "auto"
+                    })
+                    .append("path")
+                    .attr("d", "M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6");*/
+
+
+
+
+
+
+
+
+
+
+
+                /* function mouseover(d) {
+
+                     //goals :
+                     //zoom out the drawn polygon
+                     //put a tooltip on points found within the polygon
+
+                     //so tired
+                     //d3.select(this)
+                     //    .call(d3.behavior.zoom().scaleExtent([1, 10])
+                     //       .on("zoom", zoom));
+                     //d3.select(this).attr("transform", "translate(1)scale(10)");
+                     //console.log(d)
+                     // console.log("mousemove called"+d.geometry.coordinates) //get coords for looping in case of need
+
+                     //check if its in polygon
+                     datapoints.addresses.forEach(function (m) {
+                         // m.features.forEach(function(k){
+                         if (d.properties.ZN_STRING === m.ZN_STRING) {
+                             tooltip
+                                 //.html(d.properties.name)
+                                 .style("opacity", 1)
+                                 .style("left", (m.features.geometry.coordinates[0][0]) + "px")
+                                 .style("top", (m.features.geometry.coordinates[0][1]) + "px");
+                                 //.style("left", (d3.mouse(this)[0] + 3) + "px")
+                                // .style("top", (d3.mouse(this)[1]) + "px");
+                            // console.log("true")
+                            // m.features..forEach(function(k){
+                                //console.log("x:" ,m.features.geometry.coordinates[0][0])
+                            // })
+
+                         }
+                         // for(var i=0 ; i>d.geometry.coordinates.length;i++){
+                         //var b =arraycompare(d.geometry.coordinates[i],k.geometry.coordinates[0])
+                         // if( d3.polygonContains(k.geometry.coordinates,d.geometry.coordinates[i] ) ===true){
+                         //   console.log("true")
+                         // } ******failed
+
+                         // }
+                         //loop through d goemetry coords
+                         //loop through k coords
+                         //if k coord == d coords ... assign tooltip
+
+                        // })
+                     })
+                     /*tooltip
+                         //.html(d.properties.name)
+                         .style("opacity", 1)
+                         .style("left", (d3.mouse(this)[0] + 3) + "px")
+                         .style("top", (d3.mouse(this)[1]) + "px");*/
+                //add location tooltip
+                // }*/
+
+                function zoom(d) {
+                    d3.select(this).attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+                }
+
+                function arraycompare(array1, array2) {
+                    const array2Sorted = array2.slice().sort();
+                    array1.length === array2.length && array1.slice().sort().every(function (value, index) {
+                        return value === array2Sorted[index];
+                    });
+                }
+            })
+            .catch(function (error) {
+                // Error occurred while loading the data
+                console.error(error);
+            });
+   // }
+</script>
+</body>
+</html>
