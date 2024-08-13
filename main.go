@@ -1,7 +1,7 @@
 package main
 
 import (
-	
+	"mineralsInKenya/gocode"
 	
 	"github.com/gorilla/mux"
 	"html/template"
@@ -32,7 +32,11 @@ func PrintAndWriteError(w http.ResponseWriter, StatusCode int, Msg string, Err e
 	}
 	w.WriteHeader(StatusCode)
 }
+var combined gocode.Combined
 func main() {
+	//call poly to run
+	combineddata:=gocode.Poly()
+	combined=combineddata
 	router := mux.NewRouter().StrictSlash(true)
 	//css
 
@@ -40,6 +44,7 @@ func main() {
 	router.PathPrefix("/bootstrap/").Handler(http.StripPrefix("/bootstrap/", fs))
 	//
 	router.HandleFunc("/",index)
+	router.HandleFunc("/table",table)
 	router.HandleFunc("/mineralzonesfile",readfile)
 	router.HandleFunc("/file",readfile1)
 	log.Fatal(http.ListenAndServe(":7000", router))
@@ -48,6 +53,10 @@ func main() {
 func index(w http.ResponseWriter, r * http.Request){
 	_ = r
 	handleTemplateError(w, "test2.html", nil)
+}
+func table(w http.ResponseWriter, r * http.Request){
+	_ = r
+	handleTemplateError(w, "index.html", combined)
 }
 func readfile (w http.ResponseWriter , r * http.Request){
 	//_ = r

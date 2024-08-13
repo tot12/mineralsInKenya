@@ -1,0 +1,1429 @@
+{
+ "addresses": [
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gr",
+     "POINT_X": 36.9667836644,
+     "POINT_Y": 0.5813386647,
+     "MINERAL": "Graphite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Gr",
+     "LABEL_1_SP": "Graphite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      36.967604970320295,
+      0.578555728174293
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gr",
+     "POINT_X": 36.9746511666,
+     "POINT_Y": 0.60022066998,
+     "MINERAL": "Graphite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Gr",
+     "LABEL_1_SP": "Graphite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      36.975472637431366,
+      0.597436057083339
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gr",
+     "POINT_X": 36.9620631631,
+     "POINT_Y": 0.62382317658,
+     "MINERAL": "Graphite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Gr",
+     "LABEL_1_SP": "Graphite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      36.96288437807061,
+      0.621036472085767
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gsa",
+     "POINT_X": 36.9479016592,
+     "POINT_Y": 0.65844018626,
+     "MINERAL": "Sapphire",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Crn",
+     "LABEL_1_SP": "Corundum",
+     "LABEL_2_VA": "Sapphire",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      36.94872258771589,
+      0.655650414584832
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gga",
+     "POINT_X": 37.8038858985,
+     "POINT_Y": -0.6806086881,
+     "MINERAL": "Garnet",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Grt",
+     "LABEL_1_SP": "Garnet",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.80472438437871,
+      -0.683278817859216
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gb",
+     "POINT_X": 37.8070328993,
+     "POINT_Y": -0.7120786969,
+     "MINERAL": "Beryl",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Brl",
+     "LABEL_1_SP": "Beryl",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.8078714550111,
+      -0.714745993306411
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Mc",
+     "POINT_X": 37.4891858105,
+     "POINT_Y": -0.89303124748,
+     "MINERAL": "Mica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Mca",
+     "LABEL_1_SP": "Mica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.49001790647074,
+      -0.895682313796994
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Mc",
+     "POINT_X": 37.7507802586,
+     "POINT_Y": -0.6570061815,
+     "MINERAL": "Mica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Mca",
+     "LABEL_1_SP": "Mica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.751617656900315,
+      -0.659678444347285
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Mc",
+     "POINT_X": 37.7724158897,
+     "POINT_Y": -0.53112614631,
+     "MINERAL": "Mica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Mca",
+     "LABEL_1_SP": "Mica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.77325371055682,
+      -0.533809725691789
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gr",
+     "POINT_X": 37.7586477608,
+     "POINT_Y": -0.51932489301,
+     "MINERAL": "Graphite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Gr",
+     "LABEL_1_SP": "Graphite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.75948529916155,
+      -0.522009534877709
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gr",
+     "POINT_X": 37.7920846452,
+     "POINT_Y": -0.52129176856,
+     "MINERAL": "Graphite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Gr",
+     "LABEL_1_SP": "Graphite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.792922866052734,
+      -0.523976229167253
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gr",
+     "POINT_X": 37.8510909117,
+     "POINT_Y": -0.7042111947,
+     "MINERAL": "Graphite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Gr",
+     "LABEL_1_SP": "Graphite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.851930364350466,
+      -0.70687919136431
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Cu",
+     "POINT_X": 37.7920846452,
+     "POINT_Y": -0.6491386793,
+     "MINERAL": "Copper",
+     "PRIMARY_DI": "Element",
+     "NEW_ABBREV": "Cu",
+     "LABEL_1_SP": "Copper",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.79292288502782,
+      -0.651811643057285
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gga",
+     "POINT_X": 37.7979852718,
+     "POINT_Y": -0.61963554605,
+     "MINERAL": "Garnet",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Grt",
+     "LABEL_1_SP": "Garnet",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.79882362730605,
+      -0.622311163104833
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Fel",
+     "POINT_X": 38.4586124877,
+     "POINT_Y": 0.17052191133,
+     "MINERAL": "Feldspar",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Fsp",
+     "LABEL_1_SP": "Feldspar",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.45946421807537,
+      0.16777543767127
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Mc",
+     "POINT_X": 37.9813001153,
+     "POINT_Y": 0.75144599393,
+     "MINERAL": "Mica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Mca",
+     "LABEL_1_SP": "Mica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.98214222905341,
+      0.748647783967098
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Mc",
+     "POINT_X": 38.0686133541,
+     "POINT_Y": 0.81198317288,
+     "MINERAL": "Mica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Mca",
+     "LABEL_1_SP": "Mica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.06945725614071,
+      0.809179569035829
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Mc",
+     "POINT_X": 38.1070311792,
+     "POINT_Y": 0.93189335425,
+     "MINERAL": "Mica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Mca",
+     "LABEL_1_SP": "Mica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.107875888855396,
+      0.92907910094294
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Mc",
+     "POINT_X": 38.1710608877,
+     "POINT_Y": 0.76658028867,
+     "MINERAL": "Mica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Mca",
+     "LABEL_1_SP": "Mica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.171906862103214,
+      0.763780696962507
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Mc",
+     "POINT_X": 38.1605832991,
+     "POINT_Y": 0.72583411053,
+     "MINERAL": "Mica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Mca",
+     "LABEL_1_SP": "Mica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.16142905290099,
+      0.723038142362632
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Ck",
+     "POINT_X": 38.3631500132,
+     "POINT_Y": 0.8515651745,
+     "MINERAL": "Kisii Stone",
+     "PRIMARY_DI": "Rock",
+     "NEW_ABBREV": "CK",
+     "LABEL_1_SP": "Kisii Stone, Kaolinite",
+     "LABEL_2_VA": "",
+     "REMARKS": "Full name retained"
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.363999900825284,
+      0.848757991902839
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Ck",
+     "POINT_X": 38.4795676651,
+     "POINT_Y": 0.88649047004,
+     "MINERAL": "Kisii Stone",
+     "PRIMARY_DI": "Rock",
+     "NEW_ABBREV": "CK",
+     "LABEL_1_SP": "Kisii Stone, Kaolinite",
+     "LABEL_2_VA": "",
+     "REMARKS": "Full name retained"
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.48041991680638,
+      0.88368015873593
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Ck",
+     "POINT_X": 38.4981944894,
+     "POINT_Y": 0.91210235344,
+     "MINERAL": "Kisii Stone",
+     "PRIMARY_DI": "Rock",
+     "NEW_ABBREV": "CK",
+     "LABEL_1_SP": "Kisii Stone, Kaolinite",
+     "LABEL_2_VA": "",
+     "REMARKS": "Full name retained"
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.499047123730406,
+      0.909289762974845
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Ck",
+     "POINT_X": 38.4923736068,
+     "POINT_Y": 0.93655006033,
+     "MINERAL": "Kisii Stone",
+     "PRIMARY_DI": "Rock",
+     "NEW_ABBREV": "CK",
+     "LABEL_1_SP": "Kisii Stone, Kaolinite",
+     "LABEL_2_VA": "",
+     "REMARKS": "Full name retained"
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.49322612926156,
+      0.933735300412051
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gb",
+     "POINT_X": 38.0104045282,
+     "POINT_Y": 0.77472952429,
+     "MINERAL": "Beryl",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Brl",
+     "LABEL_1_SP": "Beryl",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.01124723880254,
+      0.771929240572447
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gb",
+     "POINT_X": 38.027867176,
+     "POINT_Y": 0.76308775911,
+     "MINERAL": "Beryl",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Brl",
+     "LABEL_1_SP": "Beryl",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.02871023954799,
+      0.760288505959905
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gb",
+     "POINT_X": 38.1745534173,
+     "POINT_Y": 0.70371475668,
+     "MINERAL": "Beryl",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Brl",
+     "LABEL_1_SP": "Beryl",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.17539945074034,
+      0.700920752568147
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Cu",
+     "POINT_X": 38.090732708,
+     "POINT_Y": 0.91443070648,
+     "MINERAL": "Copper",
+     "PRIMARY_DI": "Element",
+     "NEW_ABBREV": "Cu",
+     "LABEL_1_SP": "Copper",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.09157708223039,
+      0.911618005878452
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Cu",
+     "POINT_X": 38.0767625898,
+     "POINT_Y": 0.79102799555,
+     "MINERAL": "Copper",
+     "PRIMARY_DI": "Element",
+     "NEW_ABBREV": "Cu",
+     "LABEL_1_SP": "Copper",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.07760665315407,
+      0.788226250914794
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Cu",
+     "POINT_X": 38.027867176,
+     "POINT_Y": 0.73864005223,
+     "MINERAL": "Copper",
+     "PRIMARY_DI": "Element",
+     "NEW_ABBREV": "Cu",
+     "LABEL_1_SP": "Copper",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.02871023486544,
+      0.735842971007207
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gcm",
+     "POINT_X": 38.0138970578,
+     "POINT_Y": 0.72001322794,
+     "MINERAL": "Corundum",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Crn",
+     "LABEL_1_SP": "Corundum",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.01473982898685,
+      0.717217804487638
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gcm",
+     "POINT_X": 38.5435973736,
+     "POINT_Y": 0.75028181741,
+     "MINERAL": "Corundum",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Crn",
+     "LABEL_1_SP": "Corundum",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.54445089101601,
+      0.747483601589494
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gga",
+     "POINT_X": 38.506343725,
+     "POINT_Y": 0.50114804251,
+     "MINERAL": "Garnet",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Grt",
+     "LABEL_1_SP": "Garnet",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.50719644920664,
+      0.498372027083601
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gsa",
+     "POINT_X": 38.3608216602,
+     "POINT_Y": 0.39986468542,
+     "MINERAL": "Sapphire",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Crn",
+     "LABEL_1_SP": "Corundum",
+     "LABEL_2_VA": "Sapphire",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.36167142795481,
+      0.397097723822108
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Bi",
+     "POINT_X": 37.9871209979,
+     "POINT_Y": 0.77240117126,
+     "MINERAL": "Bismuth",
+     "PRIMARY_DI": "Element",
+     "NEW_ABBREV": "Brt",
+     "LABEL_1_SP": "Bismuth",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.98796323418331,
+      0.769601098955096
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Q",
+     "POINT_X": 38.1384639452,
+     "POINT_Y": 0.71302816883,
+     "MINERAL": "Silica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Q",
+     "LABEL_1_SP": "Silica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.139309247454854,
+      0.710233343232417
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Fe",
+     "POINT_X": 38.0034194691,
+     "POINT_Y": 0.74446093482,
+     "MINERAL": "Iron Ore",
+     "PRIMARY_DI": "Series",
+     "NEW_ABBREV": "Fe",
+     "LABEL_1_SP": "Iron Ore",
+     "LABEL_2_VA": "",
+     "REMARKS": "Full name retained"
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.00426203170765,
+      0.741663341106996
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Fel",
+     "POINT_X": 38.3724634254,
+     "POINT_Y": 0.75493852348,
+     "MINERAL": "Feldspar",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Fsp",
+     "LABEL_1_SP": "Feldspar",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.37331348164375,
+      0.752139926964395
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Mg",
+     "POINT_X": 38.1652400051,
+     "POINT_Y": 0.79102799555,
+     "MINERAL": "Magnesite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Mgs",
+     "LABEL_1_SP": "Magnesite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.16608586618988,
+      0.788226232845298
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Pyr",
+     "POINT_X": 38.1081953558,
+     "POINT_Y": 0.89929641174,
+     "MINERAL": "Pyrites",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Py",
+     "LABEL_1_SP": "Pyrites",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.10904008140338,
+      0.896485049608269
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Cu",
+     "POINT_X": 38.6087912586,
+     "POINT_Y": 0.83177417369,
+     "MINERAL": "Copper",
+     "PRIMARY_DI": "Element",
+     "NEW_ABBREV": "Cu",
+     "LABEL_1_SP": "Copper",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.609646109601755,
+      0.828968696114915
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Mc",
+     "POINT_X": 38.3000769643,
+     "POINT_Y": 1.06060204234,
+     "MINERAL": "Mica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Mca",
+     "LABEL_1_SP": "Mica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.30092562511461,
+      1.057776329258228
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Cu",
+     "POINT_X": 38.1633456748,
+     "POINT_Y": 1.01502494583,
+     "MINERAL": "Copper",
+     "PRIMARY_DI": "Element",
+     "NEW_ABBREV": "Cu",
+     "LABEL_1_SP": "Copper",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.16419154913327,
+      1.01220330839335
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Ck",
+     "POINT_X": 38.5113889572,
+     "POINT_Y": 0.99707033206,
+     "MINERAL": "Kisii Stone",
+     "PRIMARY_DI": "Rock",
+     "NEW_ABBREV": "CK",
+     "LABEL_1_SP": "Kisii Stone, kaolinite",
+     "LABEL_2_VA": "",
+     "REMARKS": "Full name retained"
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.512241879266384,
+      0.994250195808838
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Oi",
+     "POINT_X": 38.4934343434,
+     "POINT_Y": 0.98325909069,
+     "MINERAL": "Olivine",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Ol",
+     "LABEL_1_SP": "Olivine",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.49428689891966,
+      0.980440184598774
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gy",
+     "POINT_X": 41.4531833679,
+     "POINT_Y": 3.76484310159,
+     "MINERAL": "Gypsum",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Gp",
+     "LABEL_1_SP": "Gypsum",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      41.45409643647667,
+      3.76177858008619
+     ]
+    }
+   },
+   "COUNTY_NAM": "MANDERA"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Cr",
+     "POINT_X": 40.3648575484,
+     "POINT_Y": 3.53419537079,
+     "MINERAL": "Chromite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Chr",
+     "LABEL_1_SP": "Chromite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      40.36574904082776,
+      3.531151857816649
+     ]
+    }
+   },
+   "COUNTY_NAM": "MANDERA"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Cr",
+     "POINT_X": 40.4187213897,
+     "POINT_Y": 3.73307724645,
+     "MINERAL": "Chromite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Chr",
+     "LABEL_1_SP": "Chromite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      40.41961414155001,
+      3.730016533511544
+     ]
+    }
+   },
+   "COUNTY_NAM": "MANDERA"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Q",
+     "POINT_X": 35.1113629152,
+     "POINT_Y": -0.65644400297,
+     "MINERAL": "Silica",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Q",
+     "LABEL_1_SP": "Silica",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      35.11214556847961,
+      -0.659116748605906
+     ]
+    }
+   },
+   "COUNTY_NAM": "BOMET"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Ky",
+     "POINT_X": 37.6643219446,
+     "POINT_Y": 0.54947786676,
+     "MINERAL": "Kyanite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Ky",
+     "LABEL_1_SP": "Kyanite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.6651575607099,
+      0.546697660742198
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Ky",
+     "POINT_X": 37.7308890652,
+     "POINT_Y": 0.63886800023,
+     "MINERAL": "Kyanite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Ky",
+     "LABEL_1_SP": "Kyanite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.73172605446155,
+      0.636079837220704
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Fe",
+     "POINT_X": 37.732790983,
+     "POINT_Y": 0.62175074063,
+     "MINERAL": "Iron Ore",
+     "PRIMARY_DI": "Series",
+     "NEW_ABBREV": "Fe",
+     "LABEL_1_SP": "Iron Ore",
+     "LABEL_2_VA": "",
+     "REMARKS": "Full name retained"
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.73362800829322,
+      0.618964098637397
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Cu",
+     "POINT_X": 37.7118698879,
+     "POINT_Y": 0.64267183569,
+     "MINERAL": "Copper",
+     "PRIMARY_DI": "Element",
+     "NEW_ABBREV": "Cu",
+     "LABEL_1_SP": "Copper",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.71270648938711,
+      0.639883337776391
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gr",
+     "POINT_X": 38.5011657472,
+     "POINT_Y": 0.88231347009,
+     "MINERAL": "Graphite",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Gr",
+     "LABEL_1_SP": "Graphite",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      38.502018434751065,
+      0.879503524855915
+     ]
+    }
+   },
+   "COUNTY_NAM": "ISIOLO"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "A",
+     "POINT_X": 37.7518101603,
+     "POINT_Y": -0.63351496333,
+     "MINERAL": "Asbestos",
+     "PRIMARY_DI": "Series",
+     "NEW_ABBREV": "A",
+     "LABEL_1_SP": "Asbestos",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.75264757575266,
+      -0.636189339337959
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Gb",
+     "POINT_X": 37.7746331731,
+     "POINT_Y": -0.64112263427,
+     "MINERAL": "Beryl",
+     "PRIMARY_DI": "Mineral",
+     "NEW_ABBREV": "Brl",
+     "LABEL_1_SP": "Beryl",
+     "LABEL_2_VA": "",
+     "REMARKS": ""
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.77547105556746,
+      -0.643796322136775
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  },
+  {
+   "features": {
+    "type": "Feature",
+    "properties": {
+     "ID": 0,
+     "MIN_SYM": "Fe",
+     "POINT_X": 37.7384967362,
+     "POINT_Y": -0.671553318,
+     "MINERAL": "Iron Ore",
+     "PRIMARY_DI": "Series",
+     "NEW_ABBREV": "Fe",
+     "LABEL_1_SP": "Iron Ore",
+     "LABEL_2_VA": "",
+     "REMARKS": "Full name retained"
+    },
+    "geometry": {
+     "type": "Point",
+     "coordinates": [
+      37.739333886136684,
+      -0.674224274064874
+     ]
+    }
+   },
+   "COUNTY_NAM": "EMBU"
+  }
+ ]
+}

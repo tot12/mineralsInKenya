@@ -920,7 +920,20 @@
     { "type": "Feature", "properties": { "ID": 0.0, "MIN_SYM": "Fe", "POINT_X": 37.738496736199998, "POINT_Y": -0.671553318, "MINERAL": "Iron Ore", "PRIMARY_DI": "Series", "NEW_ABBREV": "Fe", "LABEL_1_SP": "Iron Ore", "LABEL_2_VA": null, "REMARKS": "Full name retained" }, "geometry": { "type": "Point", "coordinates": [ 37.739333886136684, -0.674224274064874 ] } },
     { "type": "Feature", "properties": { "ID": 0.0, "MIN_SYM": "Ti", "POINT_X": 39.777352546199999, "POINT_Y": -3.8097175778899999, "MINERAL": "Ilmenite", "PRIMARY_DI": "Mineral", "NEW_ABBREV": "Ill", "LABEL_1_SP": "Ilmenite", "LABEL_2_VA": null, "REMARKS": "merge titanium and illmenite" }, "geometry": { "type": "Point", "coordinates": [ 39.778232652617334, -3.812101027744631 ] } },
     { "type": "Feature", "properties": { "ID": 0.0, "MIN_SYM": "A", "POINT_X": 35.783312, "POINT_Y": -1.879436, "MINERAL": "Asbestos", "PRIMARY_DI": "Series", "NEW_ABBREV": "A", "LABEL_1_SP": "Asbestos", "LABEL_2_VA": null, "REMARKS": null }, "geometry": { "type": "Point", "coordinates": [ 35.696416466185667, -1.632850963462048 ] } },
-    { "type": "Feature", "properties": { "ID": 0.0, "MIN_SYM": "Cr", "POINT_X": 38.151998, "POINT_Y": -1.056807, "MINERAL": "Chromite", "PRIMARY_DI": "Mineral", "NEW_ABBREV": "Chr", "LABEL_1_SP": "Chromite", "LABEL_2_VA": null, "REMARKS": null }, "geometry": { "type": "Point", "coordinates": [ 38.152634569077279, -1.05932980046978 ] } }
+    { "type": "Feature",
+     "properties": { 
+        "ID": 0.0, 
+        "MIN_SYM": "Cr",
+         "POINT_X": 38.151998,
+          "POINT_Y": -1.056807,
+           "MINERAL": "Chromite", 
+           "PRIMARY_DI": "Mineral", 
+           "NEW_ABBREV": "Chr", 
+           "LABEL_1_SP": "Chromite",
+            "LABEL_2_VA": null,
+             "REMARKS": null 
+            },
+              "geometry": { "type": "Point", "coordinates": [ 38.152634569077279, -1.05932980046978 ] } }
     ]
     }
     

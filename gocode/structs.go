@@ -9,52 +9,56 @@ type AddressFeatures struct {
 	Geometry   AddressGeometry `json:"geometry"`
 }
 type AddressProperty struct {
-	ID                    int     `json:"_id"`
-	ADDRESS_POINT_ID      int     `json:"ADDRESS_POINT_ID"`
-	ADDRESS_ID            int     `json:"ADDRESS_ID"`
-	ADDRESS_STRING_ID     int     `json:"ADDRESS_STRING_ID"`
-	LINEAR_NAME_ID        int     `json:"LINEAR_NAME_ID"`
-	CENTRELINE_ID         int     `json:"CENTRELINE_ID"`
-	MAINT_STAGE           string  `json:"MAINT_STAGE"`
-	ADDRESS_NUMBER        string  `json:"ADDRESS_NUMBER"`
-	LINEAR_NAME_FULL      string  `json:"LINEAR_NAME_FULL"`
-	LO_NUM                int     `json:"LO_NUM"`
-	LO_NUM_SUF            string  `json:"LO_NUM_SUF"`
-	HI_NUM                int     `json:"HI_NUM"`
-	HI_NUM_SUF            string  `json:"HI_NUM_SUF"`
-	LINEAR_NAME           string  `json:"LINEAR_NAME"`
-	LINEAR_NAME_TYPE      string  `json:"LINEAR_NAME_TYPE"`
-	LINEAR_NAME_DIR       string  `json:"LINEAR_NAME_DIR"`
-	LINEAR_NAME_DESC      string  `json:"LINEAR_NAME_DESC"`
-	CENTRELINE_SIDE       string  `json:"CENTRELINE_SIDE"`
-	CENTRELINE_MEASURE    float64 `json:"CENTRELINE_MEASURE"`
-	CENTRELINE_OFFSET     float64 `json:"CENTRELINE_OFFSET"`
-	GENERAL_USE_CODE      int     `json:"GENERAL_USE_CODE"`
-	GENERAL_USE           string  `json:"GENERAL_USE"`
-	CLASS_FAMILY          int     `json:"CLASS_FAMILY"`
-	CLASS_FAMILY_DESC     string  `json:"CLASS_FAMILY_DESC"`
-	ADDRESS_CLASS         string  `json:"ADDRESS_CLASS"`
-	ADDRESS_CLASS_DESC    string  `json:"ADDRESS_CLASS_DESC"`
-	ADDRESS_POINT_ID_LINK int     `json:"ADDRESS_POINT_ID_LINK"`
-	ADDRESS_ID_LINK       int     `json:"ADDRESS_ID_LINK"`
-	PLACE_NAME            string  `json:"PLACE_NAME"`
-	PLACE_NAME_ALL        string  `json:"PLACE_NAME_ALL"`
-	ADDRESS_STATUS        string  `json:"ADDRESS_STATUS"`
-	OBJECTID              string  `json:"OBJECTID"`
-	MUNICIPALITY          string  `json:"MUNICIPALITY"`
-	MUNICIPALITY_NAME     string  `json:"MUNICIPALITY_NAME"`
-	WARD                  string  `json:"WARD"`
-	WARD_NAME             string  `json:"WARD_NAME"`
-	ADDRESS_FULL          string  `json:"ADDRESS_FULL"`
+	ID                    float64     `json:"ID"`
+	MIN_SYM     string    `json:"MIN_SYM"`
+	POINT_X            float64   `json:"POINT_X"`
+	POINT_Y     float64    `json:"POINT_Y"`
+	MINERAL        string     `json:"MINERAL"`
+	PRIMARY_DI        string    `json:"PRIMARY_DI"`
+	NEW_ABBREV   string  `json:"NEW_ABBREV"`
+	LABEL_1_SP        string  `json:"LABEL_1_SP"`
+	LABEL_2_VA      string  `json:"LABEL_2_VA"`
+	REMARKS                string    `json:"REMARKS"`
+	
 }
 type AddressGeometry struct {
 	Type        string      `json:"type"`
-	Coordinates [][]float64 `json:"coordinates"`
+	Coordinates []float64 `json:"coordinates"`
 }
-type CombinedAddressZN_STRING struct {
+type CombinedCountyMinerals struct {
 	Address   AddressFeatures `json:"features"`
-	ZN_STRING string                 `json:"ZN_STRING"`
+	COUNTY_NAM string                 `json:"COUNTY_NAM"`
 }
 type Combined struct{
-	Addresses  []CombinedAddressZN_STRING `json:"addresses"`
+	Addresses  []CombinedCountyMinerals `json:"addresses"`
+}
+
+type AllZoning struct {
+}
+type Zoning struct {
+	Feature []Feature `json:"features"`
+}
+type Feature struct {
+	ID      int `json:"ID"`
+	Type       string   `json:"type"`
+	
+	Properties Property `json:"properties"`
+	Geometry   Geometry `json:"geometry"`
+}
+type Property struct {
+	OBJECTID         int     `json:"OBJECTID"`
+	ID_   int     `json:"ID_"`
+	COUNTY_NAM   string  `json:"COUNTY_NAM"`
+	CONST_CODE int  `json:"CONST_CODE"`
+	CONSTITUEN string     `json:"CONSTITUEN"`
+	COUNTY_COD   int `json:"COUNTY_COD"`
+	Shape_Leng    float64    `json:"Shape_Leng"`
+	Shape_Area     float64    `json:"Shape_Area"`
+	
+	
+	
+}
+type Geometry struct {
+	Type        string          `json:"type"`
+	Coordinates [][][]float64 `json:"coordinates"`
 }
