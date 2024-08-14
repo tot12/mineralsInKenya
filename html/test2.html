@@ -23,7 +23,12 @@
 <body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
-<svg id="svg1" style="width: 100%;height: 100vh;z-index: 1;position: fixed"></svg>
+<script src="https://unpkg.com/d3-geo@1"></script>
+<script src="https://unpkg.com/d3-geo-polygon@1"></script>
+<div id="div">
+<a id="alink"></a>
+</div>
+<svg id="svg1" style="width: 100%;height: 80vh;z-index: 1;position: fixed"></svg>
 
 <!--<i id="tooltip" style="color: red;width: 2px;height:2px;" class="bi bi-geo-alt-fill"></i>-->
 <script>
@@ -62,6 +67,47 @@ function okay1(minerals){
                 data1.addresses.forEach(function(m){
                     filteredadd.push({features:m.features})
                 })*/
+
+                      //check if a point exists in a polygon
+            var combined =[] 
+            minerals.features.forEach(function(m){
+                data1.features.forEach(function(k){
+                    k.geometry.coordinates.forEach(function(g){
+                        if( d3.polygonContains(g,m.geometry.coordinates) ==true){
+                    var data ={"COUNTY_NAM":k.properties.COUNTY_NAM,"features":m}
+                    combined.push(data)
+                   }
+                    })
+                  
+                    
+                })
+            })
+            console.log("combined",combined)
+            //add to a file 
+           /* let a = document.getElementsById("alink");
+            a.href = "data:application/json,"+encodeURIComponent(combined);
+            a.download = 'abc.json';
+            a.click();*/
+           /* let a = document.createElement('a');
+a.href = "data:application/json,"+encodeURIComponent(combined);
+a.download = 'abc.json';
+a.click();*/
+//sort in alphabetical order
+var sortednodes= combined.sort(function (a, b) {
+            if (a.COUNTY_NAM < b.COUNTY_NAM) {
+                return -1;
+            }
+            if (a.COUNTY_NAM > b.COUNTY_NAM) {
+                return 1;
+            }
+            return 0;
+        });
+const data = {addresses:sortednodes};              //sample json
+const a = document.createElement('a');
+const blob = new Blob([JSON.stringify(data)]);
+a.href = URL.createObjectURL(blob);
+a.download = 'sample-profile';                     //filename to download
+a.click();
                 var rotate = [0,0,-45]
                 var projection = d3.geoIdentity().reflectY(true).fitSize([width, height], data1)
                 //projection.rotate(rotate);
@@ -99,6 +145,9 @@ function okay1(minerals){
                         else if(d.properties.MIN_SYM==="Gtm"){
                             return "purple"
                             }
+                            else if(d.properties.MIN_SYM==="Gcm"){
+                            return "black"
+                            }
 
                             else{
                                 return "#F8FFF6"  
@@ -128,82 +177,8 @@ function okay1(minerals){
 
                    
 
-                /*svg2.append("marker")
-                    .attr({
-                        "id": "arrow",
-                        "viewBox": "0 -5 10 10",
-                        "refX": 5,
-                        "refY": 0,
-                        "markerWidth": 4,
-                        "markerHeight": 4,
-                        "orient": "auto"
-                    })
-                    .append("path")
-                    .attr("d", "M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6");*/
-
-
-
-
-
-
-
-
-
-
-
-                /* function mouseover(d) {
-
-                     //goals :
-                     //zoom out the drawn polygon
-                     //put a tooltip on points found within the polygon
-
-                     //so tired
-                     //d3.select(this)
-                     //    .call(d3.behavior.zoom().scaleExtent([1, 10])
-                     //       .on("zoom", zoom));
-                     //d3.select(this).attr("transform", "translate(1)scale(10)");
-                     //console.log(d)
-                     // console.log("mousemove called"+d.geometry.coordinates) //get coords for looping in case of need
-
-                     //check if its in polygon
-                     datapoints.addresses.forEach(function (m) {
-                         // m.features.forEach(function(k){
-                         if (d.properties.ZN_STRING === m.ZN_STRING) {
-                             tooltip
-                                 //.html(d.properties.name)
-                                 .style("opacity", 1)
-                                 .style("left", (m.features.geometry.coordinates[0][0]) + "px")
-                                 .style("top", (m.features.geometry.coordinates[0][1]) + "px");
-                                 //.style("left", (d3.mouse(this)[0] + 3) + "px")
-                                // .style("top", (d3.mouse(this)[1]) + "px");
-                            // console.log("true")
-                            // m.features..forEach(function(k){
-                                //console.log("x:" ,m.features.geometry.coordinates[0][0])
-                            // })
-
-                         }
-                         // for(var i=0 ; i>d.geometry.coordinates.length;i++){
-                         //var b =arraycompare(d.geometry.coordinates[i],k.geometry.coordinates[0])
-                         // if( d3.polygonContains(k.geometry.coordinates,d.geometry.coordinates[i] ) ===true){
-                         //   console.log("true")
-                         // } ******failed
-
-                         // }
-                         //loop through d goemetry coords
-                         //loop through k coords
-                         //if k coord == d coords ... assign tooltip
-
-                        // })
-                     })
-                     /*tooltip
-                         //.html(d.properties.name)
-                         .style("opacity", 1)
-                         .style("left", (d3.mouse(this)[0] + 3) + "px")
-                         .style("top", (d3.mouse(this)[1]) + "px");*/
-                //add location tooltip
-                // }*/
-
-                function zoom(d) {
+               
+                     function zoom(d) {
                     d3.select(this).attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
                 }
 
@@ -213,11 +188,18 @@ function okay1(minerals){
                         return value === array2Sorted[index];
                     });
                 }
+
+           
             })
             .catch(function (error) {
                 // Error occurred while loading the data
                 console.error(error);
             });
+
+           
+
+            
+           
         }
    // }
 </script>

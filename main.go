@@ -8,6 +8,9 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"io/ioutil"
+	"os"
+	"encoding/json"
 	
 )
 
@@ -35,8 +38,9 @@ func PrintAndWriteError(w http.ResponseWriter, StatusCode int, Msg string, Err e
 var combined gocode.Combined
 func main() {
 	//call poly to run
-	combineddata:=gocode.Poly()
-	combined=combineddata
+	//combineddata:=gocode.Poly()
+	//combined=combineddata
+	CallCombined()
 	router := mux.NewRouter().StrictSlash(true)
 	//css
 
@@ -85,4 +89,17 @@ func readfile1 (w http.ResponseWriter , r * http.Request){
 		PrintAndWriteError(w, http.StatusInternalServerError, "Template error: %v", err)
 		return
 	}
+}
+
+
+func CallCombined() {
+	jsonFile, err := os.Open("minerals.json")
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("Successfully Opened Minerals.json")
+	defer jsonFile.Close()
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+	err = json.Unmarshal(byteValue, &combined)
+
 }
