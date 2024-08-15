@@ -39,6 +39,7 @@
                             <tr class="filters" style="background-color: #008080;color:white;">
                                 <th><input type="text" class="form-control" placeholder="County Name" disabled></th>
                                 <th><input type="text" class="form-control" placeholder="Minerals" disabled></th>
+                                <th><input type="text" class="form-control" placeholder="Location" disabled></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,6 +48,12 @@
                                 <td class="tdata">{{ .COUNTY_NAM}}</td>
                                 <td class="tdata">{{.Address.Properties.MINERAL }}</td>
                                 
+
+                                <td class="tdata">
+                                    <a class="link" href="https://maps.google.com/?q=">{{.Address.Geometry.Coordinates}}</a>
+                                   
+                                </td>
+                              
                             {{end}}
 
                             </tbody>
@@ -59,6 +66,27 @@
 </section>
 <script>
    
+   //change order of href in link
+   $(document).ready(function(){
+    var link= document.getElementsByClassName("link")
+    console.log(link)
+    for(var k =0 ;k<link.length;k++){
+        var href = link[k].href
+        var innerhtml =link[k].innerHTML
+        let modifiedSentence  = innerhtml.replace("[", "");
+        let modifiedSentence1  = modifiedSentence.replace("]", "");
+        var arr=modifiedSentence1.split(" ")
+  var linkstring=arr[1].concat(",",arr[0])
+  link[k].href =href+linkstring
+  console.log("final",link[k].href)
+  link[k].innerHTML=linkstring
+        link[k].target="_blank"
+    }
+   
+  
+});
+  
+
     //table.js
 
 </script>
