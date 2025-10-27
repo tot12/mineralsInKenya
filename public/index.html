@@ -165,7 +165,7 @@
     var  height = +svg.node().getBoundingClientRect().height;
 
     //var datapoints;
-    fetch("minerals.json")
+    fetch("kenyanMinerals.geojson")
         .then(response => response.json())
         .then(jsonData => {
             console.log("Printing fetched jsonFile here:", jsonData)
