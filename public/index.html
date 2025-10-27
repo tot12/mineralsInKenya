@@ -168,7 +168,7 @@
     fetch("kenyaMinerals.geojson")
         .then(response => response.json())
         .then(jsonData => {
-            console.log("Printing fetched jsonFile here:", jsonData)
+            
             //displaydatapoints(jsonData);
             datapoints=jsonData
             okay1(datapoints)
@@ -199,7 +199,7 @@ function okay1(minerals){
                     
                 })
             })
-            console.log("combined",combined)
+           
             //add to a file 
            /* let a = document.getElementsById("alink");
             a.href = "data:application/json,"+encodeURIComponent(combined);
