@@ -51,17 +51,17 @@ func main() {
 	//router.HandleFunc("/table",table)
 	router.HandleFunc("/mineralzonesfile",readfile)
 	router.HandleFunc("/file",readfile1)
-	log.Fatal(http.ListenAndServe(":7000", router))
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
 
 func index(w http.ResponseWriter, r * http.Request){
 	_ = r
 	handleTemplateError(w, "test2.html", nil)
 }
-func table(w http.ResponseWriter, r * http.Request){
-	_ = r
-	handleTemplateError(w, "index.html", combined)
-}
+//func table(w http.ResponseWriter, r * http.Request){
+//	_ = r
+//	handleTemplateError(w, "index.html", combined)
+////}
 func readfile (w http.ResponseWriter , r * http.Request){
 	//_ = r
 	//handleTemplateError(w, "graph.html", nil)
