@@ -18,15 +18,132 @@
             /* border: solid 1px red;)/
              /*padding: 5px;*/
         }
+        /* floating data table panel so it doesn't interfere with the fixed map */
+        .data-table-panel {
+            position: fixed;
+            left: 12px;
+            top: 12px;
+            width: 360px;
+            max-height: 75vh;
+            overflow: auto;
+            background: rgba(255,255,255,0.96);
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            padding: 10px 12px;
+            z-index: 4000; /* higher than svg (which is z-index:1) */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            font-size: 13px;
+        }
+        .data-table-panel h4 { margin: 0 0 8px 0; font-size: 16px }
+        .data-table-panel table { width: 100%; border-collapse: collapse; }
+        .data-table-panel th, .data-table-panel td { text-align: left; padding: 6px 6px; border-bottom: 1px solid #eee; }
+        .data-table-panel th { background: transparent; font-weight: 600; font-size: 13px }
+    /* no close button: panel is permanently visible */
+        .data-table-panel .coords { font-size: 12px; color: #555 }
+        @media (max-width: 1000px) {
+            .data-table-panel { width: 280px; }
+        }
+        /* legend panel (scrollable) */
+        .legend-panel {
+            position: fixed;
+            right: 12px;
+            top: 12px;
+            width: 200px;
+            max-height: 60vh;
+            overflow: auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            padding: 8px 10px;
+            z-index: 3000; /* below table (4000) but above SVG */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            font-size: 12px;
+        }
+        .legend-panel .legend-item { display: flex; align-items: center; margin-bottom: 6px; }
+        .legend-panel .swatch { width: 14px; height: 14px; border-radius: 2px; display: inline-block; margin-right: 8px; border: 1px solid #444 }
+        .legend-panel .legend-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        /* Responsive rules: on small screens (phones) hide the SVG map by default and show the table.
+           Provide a small floating control so users can switch between Map and Table views. */
+        @media (max-width: 1000px) {
+            /* show table full width on smaller screens */
+            .data-table-panel { left: 8px; right: 8px; width: auto; max-height: 84vh; }
+            .legend-panel { display: none; } /* hide legend when viewing table on smaller screens */
+        }
+
+    /* View toggle control */
+        .view-toggle {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 14px;
+            z-index: 5000;
+            background: rgba(255,255,255,0.96);
+            border-radius: 24px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            padding: 6px;
+            display: flex;
+            gap: 6px;
+        }
+        .view-toggle button { border: none; background: transparent; padding: 6px 10px; border-radius: 6px; cursor: pointer; font-weight: 600 }
+        .view-toggle button.active { background: #007bff; color: #fff }
+
+    /* Layout classes to allow the map to take the space left by the table, or let the table fill the whole screen */
+    /* default/table width values */
+    :root { --table-left: 12px; --table-width: 360px; --legend-width: 200px; --gap: 12px; }
+
+    /* both: table visible and map occupies remaining area; reserve room on the right for the legend */
+    body.view-both #svg1 { position: fixed; left: calc(var(--table-left) + var(--table-width) + var(--gap)); right: calc(var(--legend-width) + var(--gap)); top: 0; height: 100vh; width: auto !important; display: block }
+    body.view-both .data-table-panel { display: block }
+
+    /* map: map fills entire viewport; table hidden */
+    body.view-map #svg1 { left: 0; width: 100%; top: 0; height: 100vh; display: block }
+    body.view-map .data-table-panel { display: none }
+    body.view-map .legend-panel { display: block }
+
+    /* table: table fills entire viewport; map hidden */
+    body.view-table #svg1 { display: none }
+    body.view-table .data-table-panel { left: 0; right: 0; top: 0; width: auto; max-height: none; height: 100vh; border-radius: 0; padding-top: 18px }
+    body.view-table .legend-panel { display: none }
+    /* Center the main page title at the top of the viewport */
+    body > h1 {
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        z-index: 4500; /* above table and legend */
+        font-size: 20px;
+        font-weight: 700;
+        background: rgba(255,255,255,0.9);
+        padding: 4px 10px;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
     </style>
 </head>
 <body>
-
+<h1>Minerals in Kenya</h1>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
 <script src="https://unpkg.com/d3-geo@1"></script>
 <script src="https://unpkg.com/d3-geo-polygon@1"></script>
+<!-- include jQuery, bootstrap and admin filter script so the table filter behaves like in index.html -->
+<script src="/bootstrap/jquery-3.5.1.js"></script>
+<script src="/bootstrap/bootstrap.min.js"></script>
+<script src="/bootstrap/admin.js"></script>
+
 <div id="div">
-<a id="alink"></a>
+    
+    <a id="alink" style="display:none"></a>
+</div>
+<!-- Data table overlay (copied/styled from index.html list) -->
+<div id="infoPanel" class="data-table-panel" style="display:block;">
+    <h4>Minerals by County</h4>
+    <div id="tableContainer">Loading…</div>
+</div>
+<!-- view toggle: switches between map and table (visible on all sizes; default behaviour depends on screen width) -->
+<div class="view-toggle" id="viewToggle" role="group" aria-label="View toggle">
+    <button id="btnShowMap" title="Show map">Map</button>
+    <button id="btnShowTable" title="Show table">Table</button>
 </div>
 <svg id="svg1" style="width: 100%;height: 80vh;z-index: 1;position: fixed"></svg>
 
@@ -92,26 +209,126 @@ function okay1(minerals){
 a.href = "data:application/json,"+encodeURIComponent(combined);
 a.download = 'abc.json';
 a.click();*/
-//sort in alphabetical order
-var sortednodes= combined.sort(function (a, b) {
-            if (a.COUNTY_NAM < b.COUNTY_NAM) {
-                return -1;
-            }
-            if (a.COUNTY_NAM > b.COUNTY_NAM) {
-                return 1;
-            }
-            return 0;
-        });
-const data = {addresses:sortednodes};              //sample json
-const a = document.createElement('a');
-const blob = new Blob([JSON.stringify(data)]);
-a.href = URL.createObjectURL(blob);
-a.download = 'sample-profile';                     //filename to download
-a.click();
+                // sort in alphabetical order
+                var sortednodes = combined.sort(function (a, b) {
+                    if (a.COUNTY_NAM < b.COUNTY_NAM) {
+                        return -1;
+                    }
+                    if (a.COUNTY_NAM > b.COUNTY_NAM) {
+                        return 1;
+                    }
+                    return 0;
+                });
+                const data = {addresses: sortednodes};
+
+                // build HTML panel with filter inputs (compatible with /bootstrap/admin.js)
+                const container = document.getElementById('tableContainer');
+                if (container) {
+                    let panelHtml = '';
+                    panelHtml += '<div class="panel panel-primary filterable">';
+                    panelHtml += '  <div class="panel-heading">';
+                    panelHtml += '    <h3 class="panel-title">Minerals</h3>';
+                    panelHtml += '    <div class="pull-right"><button class="btn btn-default btn-xs btn-filter"><span class="bi bi-funnel"></span> Filter</button></div>';
+                    panelHtml += '  </div>';
+                    panelHtml += '  <div class="table-responsive">';
+                    panelHtml += '    <table class="table">';
+                    panelHtml += '      <thead>';
+                    panelHtml += '        <tr class="filters" style="background-color: #f1f1f1;">';
+                    panelHtml += '          <th><input type="text" class="form-control" placeholder="County Name" disabled></th>';
+                    panelHtml += '          <th><input type="text" class="form-control" placeholder="Mineral" disabled></th>';
+                    panelHtml += '          <th><input type="text" class="form-control" placeholder="Location" disabled></th>';
+                    panelHtml += '        </tr>';
+                    panelHtml += '      </thead>';
+                    panelHtml += '      <tbody>';
+
+                    sortednodes.forEach(function(item) {
+                        const county = item.COUNTY_NAM || '';
+                        const feat = item.features || {};
+                        const props = feat.properties || {};
+                        const mineral = props.MINERAL || props.NEW_ABBREV || props.MIN_SYM || '';
+                        let coordsText = '';
+                        let coordLink = '';
+                        try {
+                            const c = feat.geometry && feat.geometry.coordinates;
+                            if (Array.isArray(c)) {
+                                // GeoJSON coordinates are [lon, lat]; Google maps expects lat,lon
+                                coordsText = c[1] + ', ' + c[0];
+                                coordLink = 'https://maps.google.com/?q=' + encodeURIComponent(c[1] + ',' + c[0]);
+                            }
+                        } catch (e) { coordsText = ''; coordLink = ''; }
+
+                        const coordAnchor = coordLink ? `<a class="link" href="${coordLink}" target="_blank">${coordsText}</a>` : '';
+                        panelHtml += `<tr><td class="tdata">${county}</td><td class="tdata">${mineral}</td><td class="tdata">${coordAnchor}</td></tr>`;
+                    });
+
+                    panelHtml += '      </tbody>';
+                    panelHtml += '    </table>';
+                    panelHtml += '  </div>';
+                    panelHtml += '</div>';
+
+                    container.innerHTML = panelHtml;
+                    // show the panel
+                    const panel = document.getElementById('infoPanel');
+                    if (panel) panel.style.display = 'block';
+
+                    // panel is permanently visible (no close button)
+
+                    // The panel HTML is added dynamically, so admin.js handlers (which bind on document.ready)
+                    // won't automatically attach. Re-bind the filter behaviour for this panel so the
+                    // Filter button enables/disables the inputs and typing filters rows (same logic as admin.js).
+                    try {
+                        // Use jQuery if available
+                        if (window.jQuery) {
+                            (function($){
+                                var $panel = $(container).find('.filterable');
+                                $panel.find('.btn-filter').off('click').on('click', function(){
+                                    var $thisPanel = $(this).parents('.filterable'),
+                                        $filters = $thisPanel.find('.filters input'),
+                                        $tbody = $thisPanel.find('.table tbody');
+                                    if ($filters.prop('disabled') === true) {
+                                        $filters.prop('disabled', false);
+                                        $filters.first().focus();
+                                    } else {
+                                        $filters.val('').prop('disabled', true);
+                                        $tbody.find('.no-result').remove();
+                                        $tbody.find('tr').show();
+                                    }
+                                });
+
+                                $panel.find('.filters input').off('keyup').on('keyup', function(e){
+                                    var code = e.keyCode || e.which;
+                                    if (code == '9') return;
+                                    var $input = $(this),
+                                        inputContent = $input.val().toLowerCase(),
+                                        $thisPanel = $input.parents('.filterable'),
+                                        column = $thisPanel.find('.filters th').index($input.parents('th')),
+                                        $table = $thisPanel.find('.table'),
+                                        $rows = $table.find('tbody tr');
+
+                                    var $filteredRows = $rows.filter(function(){
+                                        var value = $(this).find('td').eq(column).text().toLowerCase();
+                                        return value.indexOf(inputContent) === -1;
+                                    });
+
+                                    $table.find('tbody .no-result').remove();
+                                    $rows.show();
+                                    $filteredRows.hide();
+
+                                    if ($filteredRows.length === $rows.length) {
+                                        $table.find('tbody').prepend($('<tr class="no-result text-center"><td colspan="'+ $thisPanel.find('.filters th').length +'">No result found</td></tr>'));
+                                    }
+                                });
+                            })(jQuery);
+                        }
+                    } catch (e) {
+                        console.warn('Could not attach filter handlers for panel', e);
+                    }
+                }
                 var rotate = [0,0,-45]
-                var projection = d3.geoIdentity().reflectY(true).fitSize([width, height], data1)
+                // make projection and path reassignable so we can refresh when the svg size changes
+                let projection = d3.geoIdentity().reflectY(true).fitSize([width, height], data1)
                 //projection.rotate(rotate);
-                var path = d3.geoPath(projection);
+                let path = d3.geoPath(projection);
 
                 svg.selectAll("path")
                     .data(data1.features)
@@ -130,32 +347,174 @@ a.click();
                     //.attr("marker-end", "url(#triangle)")
                     .attr("d", path);
 
-                    svg.selectAll('.tweets')
-                    .data(minerals.features)
-                    .enter()
-                    .append('path')
-                    .style("fill", function(d){
-                            if(d.properties.MIN_SYM==="Au"){
-                                return "red"
-                            }else if(d.properties.MIN_SYM==="Fe"){
-                            return "blue"
-                            }else if(d.properties.MIN_SYM==="Gga"){
-                            return "orange"
-                            }
-                        else if(d.properties.MIN_SYM==="Gtm"){
-                            return "purple"
-                            }
-                            else if(d.properties.MIN_SYM==="Gcm"){
-                            return "black"
-                            }
+                    // create a color for each distinct mineral symbol (MIN_SYM)
+                    const symbols = Array.from(new Set(minerals.features.map(d => d.properties.MIN_SYM)));
+                    // map symbol -> friendly name (fallback to symbol)
+                    const names = {};
+                    minerals.features.forEach(d => {
+                        const s = d.properties.MIN_SYM;
+                        if (!names[s]) names[s] = d.properties.MINERAL || d.properties.NEW_ABBREV || s;
+                    });
 
-                            else{
-                                return "#F8FFF6"  
+                    // color function: use category10 for up to 10 symbols, otherwise interpolate rainbow
+                    function colorFor(sym) {
+                        const idx = symbols.indexOf(sym);
+                        if (symbols.length <= 10) {
+                            return d3.schemeCategory10[idx % 10];
+                        }
+                        // fallback: interpolateRainbow across the unique symbols
+                        return d3.interpolateRainbow(idx / Math.max(1, symbols.length - 1));
+                    }
+
+                    svg.selectAll('.tweets')
+                        .data(minerals.features)
+                        .enter()
+                        .append('path')
+                        .style("fill", d => colorFor(d.properties.MIN_SYM))
+                        .style("stroke", "#008080")
+                        .attr('d', path)
+                        .attr('class', 'tweets');
+
+                    // build a scrollable HTML legend panel (top-right) so all minerals can be shown
+                    (function buildHtmlLegend() {
+                        // remove existing legend panel if present
+                        const existing = document.querySelector('.legend-panel');
+                        if (existing) existing.remove();
+
+                        const legendDiv = document.createElement('div');
+                        legendDiv.className = 'legend-panel';
+                        const title = document.createElement('div');
+                        title.style.fontWeight = '600';
+                        title.style.marginBottom = '6px';
+                        title.textContent = 'Legend';
+                        legendDiv.appendChild(title);
+
+                        symbols.forEach(function(sym) {
+                            const item = document.createElement('div');
+                            item.className = 'legend-item';
+                            const sw = document.createElement('span');
+                            sw.className = 'swatch';
+                            sw.style.background = colorFor(sym);
+                            sw.style.borderColor = '#444';
+                            const label = document.createElement('span');
+                            label.className = 'legend-label';
+                            label.textContent = `${sym} — ${names[sym] || ''}`;
+                            item.appendChild(sw);
+                            item.appendChild(label);
+                            legendDiv.appendChild(item);
+                        });
+
+                        document.body.appendChild(legendDiv);
+                    })();
+
+                    // refreshMap: recompute projection & path based on current svg size and re-render bound paths
+                    window.refreshMap = function(){
+                        try {
+                            const bbox = svg.node().getBoundingClientRect();
+                            if (!bbox.width || !bbox.height) return;
+                            width = +bbox.width; height = +bbox.height;
+                            projection = d3.geoIdentity().reflectY(true).fitSize([width, height], data1);
+                            path = d3.geoPath(projection);
+                            // update only paths that have geo data bound (d is present)
+                            svg.selectAll('path').filter(function(d){ return d; }).attr('d', path);
+                        } catch (e){ console.warn('refreshMap failed', e); }
+                    };
+
+                    // Responsive view helpers: allow switching between map and table.
+                    (function setupViewToggle(){
+                        const svgEl = document.getElementById('svg1');
+                        const tableEl = document.getElementById('infoPanel');
+                        const legendEl = document.querySelector('.legend-panel');
+                        const btnMap = document.getElementById('btnShowMap');
+                        const btnTable = document.getElementById('btnShowTable');
+
+                        function setActive(btn){
+                            [btnMap, btnTable].forEach(b => b.classList.remove('active'));
+                            if(btn) btn.classList.add('active');
+                        }
+
+                        function setView(view){
+                            if(view === 'map'){
+                                if(svgEl) svgEl.style.display = 'block';
+                                if(tableEl) tableEl.style.display = 'none';
+                                if(legendEl) legendEl.style.display = 'block';
+                                setActive(btnMap);
+                            } else if(view === 'table'){
+                                if(svgEl) svgEl.style.display = 'none';
+                                if(tableEl) tableEl.style.display = 'block';
+                                if(legendEl) legendEl.style.display = 'none';
+                                setActive(btnTable);
+                            } else { // both
+                                if(svgEl) svgEl.style.display = 'block';
+                                if(tableEl) tableEl.style.display = 'block';
+                                if(legendEl) legendEl.style.display = 'block';
+                                setActive(null);
                             }
-                    })
-                    .style("stroke", "#008080")
-                    .attr('d',path)
-                    .attr('class', 'tweets');
+                        }
+
+                        // On first render, always toggle Table view
+                        setTimeout(function(){
+                            var btnTable = document.getElementById('btnShowTable');
+                            if(btnTable) btnTable.click();
+                        }, 10);
+
+                        // If the map is visible on load (view-both or view-map), refresh its projection because
+                        // the SVG may have been hidden when width/height were computed earlier. refreshMap is
+                        // defined later (after the map paths are created) — call it after a short delay if present.
+                        setTimeout(function(){ if(window.refreshMap && (document.body.classList.contains('view-map') || document.body.classList.contains('view-both')) ) window.refreshMap(); }, 100);
+
+                        // wire up buttons to toggle body-level layout classes so the CSS handles sizing
+                        btnMap.addEventListener('click', function(){
+                            document.body.classList.remove('view-table','view-both');
+                            document.body.classList.add('view-map');
+                            setActive(btnMap);
+                            // Show the map, hide the table, hide legend on small screens
+                            var infoPanel = document.getElementById('infoPanel');
+                            if(infoPanel) infoPanel.style.display = 'none';
+                            var svgEl = document.getElementById('svg1');
+                            if(svgEl) {
+                                svgEl.style.display = 'block';
+                                svgEl.style.position = 'fixed';
+                                svgEl.style.left = '0';
+                                svgEl.style.top = '0';
+                                svgEl.style.width = '100vw';
+                                svgEl.style.height = '80vh';
+                                svgEl.style.zIndex = '1';
+                            }
+                            var legendEl = document.querySelector('.legend-panel');
+                            if(window.innerWidth <= 1000 && legendEl) legendEl.style.display = 'none';
+                            else if(legendEl) legendEl.style.display = 'block';
+                            setTimeout(function(){ if(window.refreshMap) window.refreshMap(); }, 80);
+                        });
+                        btnTable.addEventListener('click', function(){
+                            document.body.classList.remove('view-map','view-both');
+                            document.body.classList.add('view-table');
+                            setActive(btnTable);
+                            // Show the table, hide the map, hide legend
+                            var infoPanel = document.getElementById('infoPanel');
+                            if(infoPanel) infoPanel.style.display = 'block';
+                            var svgEl = document.getElementById('svg1');
+                            if(svgEl) svgEl.style.display = 'none';
+                            var legendEl = document.querySelector('.legend-panel');
+                            if(legendEl) legendEl.style.display = 'none';
+                        });
+
+                        // respect orientation / resize changes: switch defaults but do not override explicit user choices
+                        var userChosen = false;
+                        [btnMap, btnTable].forEach(function(b){ b.addEventListener('click', function(){ userChosen = true; }) });
+                        window.addEventListener('resize', function(){
+                            if(userChosen) return; // preserve explicit user choice
+                            if(window.innerWidth <= 1000){
+                                document.body.classList.remove('view-map','view-both');
+                                document.body.classList.add('view-table');
+                                setActive(btnTable);
+                            } else {
+                                document.body.classList.remove('view-map','view-table');
+                                document.body.classList.add('view-both');
+                                setActive(null);
+                            }
+                        });
+                    })();
 
                 var tooltip = d3.select("#tooltip")
                     .style("opacity", 1)

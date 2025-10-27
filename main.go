@@ -48,7 +48,7 @@ func main() {
 	router.PathPrefix("/bootstrap/").Handler(http.StripPrefix("/bootstrap/", fs))
 	//
 	router.HandleFunc("/",index)
-	router.HandleFunc("/table",table)
+	//router.HandleFunc("/table",table)
 	router.HandleFunc("/mineralzonesfile",readfile)
 	router.HandleFunc("/file",readfile1)
 	log.Fatal(http.ListenAndServe(":7000", router))
