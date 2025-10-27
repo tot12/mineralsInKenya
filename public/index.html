@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="/bootstrap/bootstrap-icons.css" rel="stylesheet">
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/bootstrap-icons.css" rel="stylesheet">
     <style>
         /* path{
              transform: scale(5.0);
@@ -127,9 +127,9 @@
 <script src="https://unpkg.com/d3-geo@1"></script>
 <script src="https://unpkg.com/d3-geo-polygon@1"></script>
 <!-- include jQuery, bootstrap and admin filter script so the table filter behaves like in index.html -->
-<script src="/bootstrap/jquery-3.5.1.js"></script>
-<script src="/bootstrap/bootstrap.min.js"></script>
-<script src="/bootstrap/admin.js"></script>
+<script src="bootstrap/jquery-3.5.1.js"></script>
+<script src="bootstrap/bootstrap.min.js"></script>
+<script src="bootstrap/admin.js"></script>
 
 <div id="div">
     
@@ -165,7 +165,7 @@
     var  height = +svg.node().getBoundingClientRect().height;
 
     //var datapoints;
-    fetch("/mineralzonesfile")
+    fetch("minerals.json")
         .then(response => response.json())
         .then(jsonData => {
             console.log("Printing fetched jsonFile here:", jsonData)
@@ -178,7 +178,7 @@
         });
 function okay1(minerals){
 
-        d3.json("/file")
+    d3.json("geojson/kenya.geojson")
             .then(function (data1) {
                 /*var filteredadd=[]
                 data1.addresses.forEach(function(m){

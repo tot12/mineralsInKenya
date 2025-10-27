@@ -19,7 +19,7 @@ var templates *template.Template
 
 //var jsontemplates *template.Template
 func init() {
-	templates = template.Must(template.ParseGlob("html/*.html"))
+	templates = template.Must(template.ParseGlob("public/*.html"))
 }
 func handleTemplateError(w http.ResponseWriter, templateName string, data interface{}) {
 	if err := templates.ExecuteTemplate(w, templateName, data); err != nil {
